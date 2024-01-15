@@ -25,5 +25,7 @@ jobs:
         run: cd app && pip install -r requirements.txt
 
       - name: Run app and print temperature
+        env:
+          WEATHER_API_KEY: ${{ secrets.WEATHER_API }}
         # Update the line below such that the correct city is passed to the app
         run: cd app && python3 main.py ${{ github.event.inputs.city }}
