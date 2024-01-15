@@ -7,7 +7,7 @@ on:
       city:
         description: 'City to get the temperature from'
         required: true
-        default: Brussels
+        default: 'Brussels'
 
 jobs:
   print_temperature:
@@ -26,4 +26,4 @@ jobs:
 
       - name: Run app and print temperature
         # Update the line below such that the correct city is passed to the app
-        run: cd app && python3 main.py ${{ github.event.inputs.version }}
+        run: cd app && python3 main.py ${{ github.event.inputs.city }}
